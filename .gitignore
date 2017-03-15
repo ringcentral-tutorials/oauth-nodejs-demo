@@ -4,6 +4,6 @@
 *.env
 *.config
 *.pem
-javascript-express/.env
-javascript-express/node_modules
-javascript-express/npm-debug.log
+.env
+node_modules
+npm-debug.log
