@@ -1,21 +1,9 @@
-RingCentral OAuth Demos
+Authorization Flow - NodeJS - Express - Demo
 =======================
 
 This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html) as described in the [API Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 The authorization code flow is useful for developers because developers have to do less work and the user is presented with a familiar user experience. It accomplishes these goals by redirecting to RingCentral to mange the authentication, authorization, reset password and single sign-on (SSO) flows using a consistent user experience.
-
-The demos use the popup approach for 3-legged OAuth.
-
-Demos are provided for:
-
-* Server-Side Web Apps (more secure)
-  * [C# with Nancy](https://github.com/grokify/ringcentral-oauth-demos/tree/master/csharp-nancy)
-  * [JavaScript with Express](https://github.com/grokify/ringcentral-oauth-demos/tree/master/javascript-express) (with optional TLS)
-  * [Python 2.7 with Bottle](https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle)
-  * [Ruby with Sinatra](https://github.com/grokify/ringcentral-oauth-demos/tree/master/ruby-sinatra)
-* Client-Side Web Apps (less secure)
-  * [JavaScript](https://github.com/grokify/ringcentral-oauth-demos/tree/master/javascript)
 
 ## Description
 
@@ -67,13 +55,11 @@ The following are example screenshots of the authentication and authorization pa
   * [ringcentral-js](https://github.com/ringcentral/ringcentral-js)
   * [ringcentral-sdk-ruby](https://github.com/grokify/ringcentral-sdk-ruby)
 * Example Code
-  * [ringcentral-js/demo/oauth](https://github.com/ringcentral/ringcentral-js/tree/5f5197ccb93410d732410127d54449e79ec5c64d/demo/oauth)
-  * [ringcentral-oauth-demos](https://github.com/grokify/ringcentral-oauth-demos) - this project
   * [ringcentral-cti-demo-js](https://github.com/ringcentral/ringcentral-cti-demo-js) 
 
 ## Contributing
 
-1. Fork it (http://github.com/grokify/ringcentral-demos-oauth/fork)
+1. Fork it (http://github.com/ringcentral-tutorials/ringcentral-demos-oauth/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
