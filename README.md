@@ -1,9 +1,65 @@
-Authorization Flow - NodeJS - Express - Demo
+Authorization Flow (aka: 3-Legged OAuth) Demo in Node.js with Express.js
 =======================
+
+## Overview
 
 This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html) as described in the [API Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 The authorization code flow is useful for developers because developers have to do less work and the user is presented with a familiar user experience. It accomplishes these goals by redirecting to RingCentral to mange the authentication, authorization, reset password and single sign-on (SSO) flows using a consistent user experience.
+
+This is a quick 3-legged OAuth demo that runs using [Node.js](https://expressjs.com/) and [Express](https://expressjs.com/) using the [RingCentral JavaScript SDK](https://github.com/ringcentral/ringcentral-js) v2.x
+
+## Installation
+
+### Via NPM
+
+```
+$ git clone https://github.com/ringcentral-tutorials/authorization-flow-nodejs-express-demo
+$ cd authorization-flow-nodejs-express-demo 
+$ npm install
+```
+
+### Configuration
+
+Edit the `.env` file and add your RingCentral API Keys (application key and application secret).
+
+```
+$ cd authorization-flow-nodejs-express-demo
+$ mv config-sample.env.txt .env
+$ vi .env
+```
+
+In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirect URI in your config file has been entered in your app configuration. By default, the URL is set to the following for this demo:
+
+```
+http://localhost:8080/callback
+```
+
+#### Using TLS
+
+If you set the following parameters, you can start this demo using TLS. Be sure you are using HTTPS for your redirect URI (this is required for production applications, but not in the sandbox during development).
+
+| Property | Information |
+|----------|-------------|
+| `MY_APP_TLS_ENABLED` | Set to `1` for HTTPS and `0` for HTTP |
+| `MY_APP_TLS_PRIVATE_KEY` | Set to path to PEM file for private key |
+| `MY_APP_TLS_CERTIFICATE` | Set to path to PEM file for certificate |
+
+## Usage
+
+Start the application using the [NPM](https://www.npmjs.com/) command:
+
+```
+$ npm start
+```
+
+Open your browser and go to the Demo App URL:
+
+```
+http://localhost:8080
+````
+
+Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.
 
 ## Description
 
