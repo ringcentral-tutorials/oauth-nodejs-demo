@@ -80,9 +80,6 @@ The following are example screenshots of the authentication and authorization pa
   * [IETF OAuth 2.0 RFC](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1)
 * SDKs with built-in Authorization Code helpers (others, like Python can still be used)
   * [ringcentral-js](https://github.com/ringcentral/ringcentral-js)
-  * [ringcentral-sdk-ruby](https://github.com/grokify/ringcentral-sdk-ruby)
-* Example Code
-  * [ringcentral-cti-demo-js](https://github.com/ringcentral/ringcentral-cti-demo-js) 
 
 ## Contributing
 
