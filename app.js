@@ -15,8 +15,8 @@ app.set('views', __dirname + '/views');
 
 // Start HTTP server
 var server = null;
-var port = process.env.PORT;
-var useTls = process.env.TLS_ENABLED > 0 ? true : false;
+const port = process.env.PORT;
+const useTls = process.env.TLS_ENABLED > 0 ? true : false;
 
 if (useTls) {
   var fs = require('fs');
@@ -37,20 +37,22 @@ if (useTls) {
 }
 
 // Start RingCentral SDK
-var rcsdk = new ringcentral({
+const rcsdk = new ringcentral({
   server: process.env.RINGCENTRAL_SERVER_URL,
   appKey: process.env.RINGCENTRAL_CLIENT_ID,
   appSecret: process.env.RINGCENTRAL_CLIENT_SECRET
 });
 
+const platform = rcsdk.platform()
+
 app.get('/', function (req, res) {
   // Get token for display after OAuth
-  var token = rcsdk.platform().auth().data();
+  var token = platform.auth().data();
   token_json = token['access_token'] ? JSON.stringify(token, null, ' ') : '';
 
   // Render home page with params
   res.render('index', {
-    authorize_uri: rcsdk.platform().authUrl({
+    authorize_uri: platform.authUrl({
       brandId: process.env.RINGCENTRAL_BRAND_ID,        // optional
       redirectUri: process.env.RINGCENTRAL_REDIRECT_URL // optional if 1 configured
     }),
@@ -61,7 +63,7 @@ app.get('/', function (req, res) {
 
 app.get('/oauth2callback', function(req, res) {
   if (req.query.code) {
-    rcsdk.platform()
+    platform
       .login({
         code: req.query.code,
         redirectUri: process.env.RINGCENTRAL_REDIRECT_URL

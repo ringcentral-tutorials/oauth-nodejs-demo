@@ -2,9 +2,11 @@
 
   .step(data-title='Intro', data-file='images/ringcentral_logo.txt', data-highlight='1-13')
     :markdown
-      This is a OAuth 2.0 demo app using Node.js and Express.
+      This is a OAuth 2.0 demo using Node.js and Express.
 
-  .step(data-title='Set up the project', data-file='../README.md', data-highlight='13-15')
+      The OAuth 2.0 Authorization Code grant launches a RingCentral login window that handles username password input, including Single Sign-on.
+
+  .step(data-title='Set up the project', data-file='../README.md', data-highlight='20-22')
     :markdown
       * Clone the demo repo with git.
       * Install dependencies with NPM
@@ -25,7 +27,7 @@
       Please visit [Developer Portal](http://developer.ringcentral.com/) to apply client ID and secret. And ensure the redirect URI in your config file has been entered in your app settings. By default, the URL is set to the following for this demo:
       
       ```
-      http://localhost:8080/callback
+      http://localhost:8080/oauth2callback
       ```
 
   .step(data-title='Create RingCentral SDK instance', data-file='../app.js', data-highlight='40-44')
