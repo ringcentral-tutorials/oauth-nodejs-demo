@@ -45,9 +45,9 @@ If you set the following parameters, you can start this demo using TLS. Be sure 
 
 | Property | Information |
 |----------|-------------|
-| `MY_APP_TLS_ENABLED` | Set to `1` for HTTPS and `0` for HTTP |
-| `MY_APP_TLS_PRIVATE_KEY` | Set to path to PEM file for private key |
-| `MY_APP_TLS_CERTIFICATE` | Set to path to PEM file for certificate |
+| `TLS_ENABLED` | Set to `1` for HTTPS and `0` for HTTP |
+| `TLS_PRIVATE_KEY` | Set to path to PEM file for private key |
+| `TLS_CERTIFICATE` | Set to path to PEM file for certificate |
 
 ## Usage
 
