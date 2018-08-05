@@ -59,7 +59,7 @@ app.get('/', function(req, res) {
   });
 });
 
-app.get('/callback', function(req, res) {
+app.get('/oauth2callback', function(req, res) {
   if (req.query.code) {
     rcsdk.platform()
       .login({
