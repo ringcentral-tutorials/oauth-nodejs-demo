@@ -7,11 +7,7 @@
 
 ## Overview
 
-This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html) as described in the [API Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
-
-The authorization code flow is useful for developers because developers have to do less work and the user is presented with a familiar user experience. It accomplishes these goals by redirecting to RingCentral to mange the authentication, authorization, reset password and single sign-on (SSO) flows using a consistent user experience.
-
-This is a quick 3-legged OAuth demo that runs using [Node.js](https://expressjs.com/) and [Express](https://expressjs.com/) using the [RingCentral JavaScript SDK](https://github.com/ringcentral/ringcentral-js) v2.x
+This is a quick 3-legged OAuth demo that runs using JavaScript, Node.js and Express with the [RingCentral JavaScript SDK](https://github.com/ringcentral/ringcentral-js) v2.x
 
 ## Installation
 
