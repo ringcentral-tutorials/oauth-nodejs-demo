@@ -17,8 +17,8 @@ This is a quick 3-legged OAuth demo that runs using JavaScript, Node.js and Expr
 ### Via NPM
 
 ```
-$ git clone https://github.com/ringcentral-tutorials/authorization-flow-nodejs-express-demo
-$ cd authorization-flow-nodejs-express-demo 
+$ git clone https://github.com/ringcentral-tutorials/oauth-nodejs-demo
+$ cd oauth-nodejs-demo
 $ npm install
 ```
 
@@ -27,7 +27,7 @@ $ npm install
 Edit the `.env` file and add your RingCentral API Keys (application key and application secret).
 
 ```
-$ cd authorization-flow-nodejs-express-demo
+$ cd oauth-nodejs-demo
 $ mv config-sample.env .env
 $ vi .env
 ```
