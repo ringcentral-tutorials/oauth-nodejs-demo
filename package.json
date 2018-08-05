@@ -1,14 +1,16 @@
 {
   "name": "authorization-flow-nodejs-express-demo",
   "version": "0.1.0",
-  "description": "RingCentral Node.js OAuth 2.0 Authorization Flow Demo",
+  "description": "RingCentral Node.js OAuth 2.0 demo",
   "scripts": {
+    "build": "cd docs && ../node_modules/.bin/saurus author",
     "start": "node app",
-    "test": "./node_modules/mocha/bin/mocha test/**/*-test.js --reporter spec"
+    "test": "./node_modules/mocha/bin/mocha test/**/*-test.js --reporter spec",
+    "upgrade": "yarn-upgrade-all"
   },
   "author": "john.wang@ringcentral.com",
   "license": "MIT",
-  "homepage": "https://github.com/ringcentral-tutorials/authorization-flow-nodejs-express-demo/",
+  "homepage": "https://github.com/ringcentral-tutorials/oauth-nodejs-demo",
   "dependencies": {
     "dotenv": "latest",
     "express": "^4.13.4",
