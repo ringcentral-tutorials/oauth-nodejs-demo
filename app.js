@@ -25,14 +25,14 @@ if (useTls) {
       key: fs.readFileSync(process.env.TLS_PRIVATE_KEY),
       cert: fs.readFileSync(process.env.TLS_PUBLIC_CERT)
     }, app)
-    .listen(port, function() {
-      console.log('LISTEN_HTTPS ' + port);    
+    .listen(port, function () {
+      console.log('LISTEN_HTTPS ' + port);
     });
 } else {
   server = require('http')
     .Server(app)
-    .listen(port, function() {
-      console.log('LISTEN_HTTP ' + port);    
+    .listen(port, function () {
+      console.log('LISTEN_HTTP ' + port);
     });
 }
 
@@ -43,7 +43,7 @@ var rcsdk = new ringcentral({
   appSecret: process.env.RINGCENTRAL_CLIENT_SECRET
 });
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   // Get token for display after OAuth
   var token = rcsdk.platform().auth().data();
   token_json = token['access_token'] ? JSON.stringify(token, null, ' ') : '';
@@ -66,15 +66,16 @@ app.get('/oauth2callback', function(req, res) {
         code: req.query.code,
         redirectUri: process.env.RINGCENTRAL_REDIRECT_URL
       })
-      .then(function(response) {
+      .then(function (token) {
+        // You should store your token in the session here
         console.log('logged_in');
-        res.send('');
+        res.send('login success');
       })
-      .catch(function(e) {
-        console.log('ERR ' + e.message  || 'Server cannot authorize user');
-        res.send('');
+      .catch(function (e) {
+        console.log('ERR ' + e.message || 'Server cannot authorize user');
+        res.send('Login error ' + e);
       });
   } else {
-    res.send('');
+    res.send('No Auth code');
   }
 });
