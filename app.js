@@ -1,4 +1,9 @@
-require('dotenv').config();
+if (process.env.ENV_PATH) {
+  require('dotenv').config({path: process.env.ENV_PATH});
+} else {
+  require('dotenv').config();
+}
+
 var app = require('express')();
 var ringcentral = require('ringcentral');
 
