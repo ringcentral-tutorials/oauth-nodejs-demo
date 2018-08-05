@@ -6,7 +6,7 @@
     "start": "node app",
     "test": "./node_modules/mocha/bin/mocha test/**/*-test.js --reporter spec"
   },
-  "author": "johncwang@gmail.com",
+  "author": "john.wang@ringcentral.com",
   "license": "MIT",
   "homepage": "https://github.com/ringcentral-tutorials/authorization-flow-nodejs-express-demo/",
   "dependencies": {
