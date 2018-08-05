@@ -100,11 +100,11 @@ The following are example screenshots of the authentication and authorization pa
 
 ### Authentication
 
-![](_images/ringcentral_oauth_authentication.png)
+![](docs/images/ringcentral_oauth_authentication.png)
 
 ### Authorization
 
-![](_images/ringcentral_oauth_authorization.png)
+![](docs/images/ringcentral_oauth_authorization.png)
 
 ## Links
 
