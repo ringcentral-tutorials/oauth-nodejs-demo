@@ -1,6 +1,6 @@
 {
   "name": "authorization-flow-nodejs-express-demo",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "RingCentral Node.js OAuth 2.0 Authorization Flow Demo",
   "scripts": {
     "start": "node app",

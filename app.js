@@ -10,15 +10,15 @@ app.set('views', __dirname + '/views');
 
 // Start HTTP server
 var server = null;
-var port = process.env.MY_APP_PORT;
-var useTls = process.env.MY_APP_TLS_ENABLED > 0 ? true : false;
+var port = process.env.PORT;
+var useTls = process.env.TLS_ENABLED > 0 ? true : false;
 
 if (useTls) {
   var fs = require('fs');
   server = require('https')
     .createServer({
-      key: fs.readFileSync(process.env.MY_APP_TLS_PRIVATE_KEY),
-      cert: fs.readFileSync(process.env.MY_APP_TLS_PUBLIC_CERT)
+      key: fs.readFileSync(process.env.TLS_PRIVATE_KEY),
+      cert: fs.readFileSync(process.env.TLS_PUBLIC_CERT)
     }, app)
     .listen(port, function() {
       console.log('LISTEN_HTTPS ' + port);    
@@ -33,9 +33,9 @@ if (useTls) {
 
 // Start RingCentral SDK
 var rcsdk = new ringcentral({
-  server: process.env.RC_APP_SERVER_URL,
-  appKey: process.env.RC_APP_KEY,
-  appSecret: process.env.RC_APP_SECRET
+  server: process.env.RINGCENTRAL_SERVER_URL,
+  appKey: process.env.RINGCENTRAL_CLIENT_ID,
+  appSecret: process.env.RINGCENTRAL_CLIENT_SECRET
 });
 
 app.get('/', function(req, res) {
@@ -46,10 +46,10 @@ app.get('/', function(req, res) {
   // Render home page with params
   res.render('index', {
     authorize_uri: rcsdk.platform().authUrl({
-      brandId: process.env.RC_APP_BRAND_ID,        // optional
-      redirectUri: process.env.RC_APP_REDIRECT_URL // optional if 1 configured
+      brandId: process.env.RINGCENTRAL_BRAND_ID,        // optional
+      redirectUri: process.env.RINGCENTRAL_REDIRECT_URL // optional if 1 configured
     }),
-    redirect_uri: process.env.RC_APP_REDIRECT_URL,
+    redirect_uri: process.env.RINGCENTRAL_REDIRECT_URL,
     token_json: token_json
   });
 });
@@ -59,7 +59,7 @@ app.get('/callback', function(req, res) {
     rcsdk.platform()
       .login({
         code: req.query.code,
-        redirectUri: process.env.RC_APP_REDIRECT_URL
+        redirectUri: process.env.RINGCENTRAL_REDIRECT_URL
       })
       .then(function(response) {
         console.log('logged_in');
